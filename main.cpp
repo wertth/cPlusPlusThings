@@ -1,6 +1,8 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+
+    std::ostream a = std::cout << 'a';
+
+    return -1;
 }
