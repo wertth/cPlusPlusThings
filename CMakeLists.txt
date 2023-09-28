@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 #set(CMAKE_CXX_FLAGS "-O3 -Wall -Wextra")
 
-add_executable(cPlusPlusThings   array/kth_big_num/kth_big_num.h array/kth_big_num/test.cpp heap/heap.h heap/test.cpp)
+add_executable(cPlusPlusThings  array/Solution_134/gasStation.h array/Solution_134/test.cpp)
 #file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 #foreach(file ${files})
 #    get_filename_component(name ${file} NAME)
