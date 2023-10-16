@@ -45,7 +45,7 @@ sortedArray getWordsFrequency(std::string & str) {
     // sort
     auto begin = wordCount.begin(), end = wordCount.end();
     for(auto it = begin; it != end; it++ ) {
-        arr.push_back(std::make_pair(it->second,it->first));
+        arr.emplace_back(it->second,it->first);
     }
 
     std::sort(arr.begin(), arr.end(), Greater());
