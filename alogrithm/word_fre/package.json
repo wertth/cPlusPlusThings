@@ -1,0 +1,10 @@
+{
+  "name": "word_fre",
+  "version": "1.0.0",
+  "main": "genHugeRandomFile.js",
+  "scripts": {
+    "start": "node genHugeRandomFile.js"
+  },
+  "dependencies": {
+  }
+}
