@@ -20,7 +20,7 @@ namespace net {
         Connection() = delete;
         Connection(Owner owner,asio::ip::tcp::socket socket,std::shared_ptr<asio::io_context> io_cntext,
                    ThreadSafeQueue<OwnerMessage<T>> &message_in)
-                :m_owner(owner), m_socket(std::move(socket)),m_message_in(message_in),m_io_cntext(io_cntext){};
+                :m_owner(owner), m_socket(std::move(socket)),m_message_in(message_in),m_io_cntext(std::move(io_cntext)){};
         virtual ~Connection(){
             disconnect();
         }
@@ -165,9 +165,12 @@ namespace net {
     bool Connection<T>::connect(const asio::ip::tcp::resolver::results_type& endpoints) {
         try {
             if(m_owner == Owner::CLIENT) {
-                asio::async_connect(m_socket, endpoints, [this] (std::error_code ec, asio::ip::tcp::endpoint endpoint) {
+                asio::async_connect(m_socket, endpoints, [this] (std::error_code ec, const asio::ip::tcp::endpoint& endpoint) {
                     if(!ec) {
                         ReadHeader();
+                    } else {
+                        std::cout<< "[CONNECTION] failed errcode:" << ec << std::endl;
+
                     }
                 });
             }

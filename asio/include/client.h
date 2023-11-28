@@ -28,7 +28,7 @@ namespace net {
         }
     protected:
         // owned io context
-        std::shared_ptr<asio::io_context> m_io_context;
+        std::shared_ptr<asio::io_context> m_io_context = std::make_shared<asio::io_context>();
 
         std::thread m_thread_context;
 

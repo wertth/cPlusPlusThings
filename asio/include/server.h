@@ -17,9 +17,7 @@ namespace net {
     public:
         typedef std::vector<std::shared_ptr<Connection<T>>> IgnoreConnections;
         typedef std::deque<std::shared_ptr<Connection<T>>> Connections;
-        explicit Server(uint16_t port)
-        :m_acceptor(*m_asio_context, asio::ip::tcp::endpoint(asio::ip::tcp::v4(),port)) {
-            ///
+        explicit Server(uint16_t port):m_acceptor(*m_asio_context, asio::ip::tcp::endpoint(asio::ip::tcp::v4(),port)){
         }
         virtual ~Server() {
             stop();
@@ -33,7 +31,7 @@ namespace net {
                 std::cerr<< "[SERVER] exception: " << err.what() << std::endl;
                 return false;
             }
-            std::cout<< "[SERVER] started" << std::endl;
+            std::cout<< "[SERVER] started" <<  std::endl;
             return true;
         };
 
@@ -72,7 +70,7 @@ namespace net {
 
         ThreadSafeQueue<OwnerMessage<T>> m_message_in;
 
-        std::shared_ptr<asio::io_context> m_asio_context;
+        std::shared_ptr<asio::io_context> m_asio_context = std::make_shared<asio::io_context>();
 
         std::thread m_thread;
 

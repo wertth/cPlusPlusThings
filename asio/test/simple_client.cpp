@@ -73,7 +73,7 @@ int main() {
     SetTerminalMode(true);
 
     CustomClient c;
-    c.Connect("127.0.0.1", 60000);
+    c.Connect("0.0.0.0", 8090);
 
     bool key[3] = { false, false, false };
     bool old_key[3] = { false, false, false };
