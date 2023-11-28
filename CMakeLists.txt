@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.25.2)
+cmake_minimum_required(VERSION 3.22)
 project(cPlusPlusThings)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -15,8 +15,8 @@ set(BOOST_ROOT "/usr/local/")
 # 如果你需要其他的Boost库，你可以在此处列出它们。
 find_package(Boost REQUIRED COMPONENTS system filesystem)
 
-add_executable(cPlusPlusThings stl/size_t.cpp)
+#add_executable(cPlusPlusThings main.cpp)
 
 # 这些指令将Boost的头文件目录和库添加到你的项目。
 include_directories(${Boost_INCLUDE_DIRS})
-target_link_libraries(cPlusPlusThings ${Boost_LIBRARIES})
+#target_link_libraries(cPlusPlusThings ${Boost_LIBRARIES})
