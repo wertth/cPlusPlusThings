@@ -2,5 +2,6 @@ cmake-build-debug
 cmake-build-debug-docker
 */cmake-build-debug
 */cmake-build-dubug_docker
+*/cmake-build-release
 .idea
 blogs
