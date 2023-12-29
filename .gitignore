@@ -4,6 +4,6 @@ cmake-build-debug-docker
 */cmake-build-dubug_docker
 */cmake-build-release
 build/*
-
+./vscode/*
 .idea
 blogs
